@@ -1,0 +1,1 @@
+﻿INSERT INTO utilisateur VALUES('Flectra', 'test', NULL, 'Admin');
