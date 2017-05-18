@@ -3,16 +3,17 @@
 	<head>
 		<title> Page d'accueil BDA </title>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class = titreBienvenue>
-		Bienvenue 
+		<h2>Bienvenue !</h2> 
 		</div>
 		<div class = "barreNavig">	
-			<ul>
-	  		<li><a href="?section=profils&profil=realiste">Réaliste</a></li>
-	  		<li><a href="?section=profils&profil=investigatif" >Investigatif</a></li>
-	  		<li><a class="active" href="?section=profils&profil=Conventionnel">Conventionnel</a></li>
+			<ul id="nav">
+		  		<li id="nav-accueil">Accueil</li>
+		  		<li id="nav-clubs">Clubs BDA</li>
+		  		<li id="nav-soon">A venir</li>
 			</ul> 
 		</div>
 	</body>
