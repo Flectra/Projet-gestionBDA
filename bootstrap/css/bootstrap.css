@@ -6861,4 +6861,32 @@ z-index: -1;
   padding-top: 100px;
 }
 
+#carrousel{
+
+    position:relative;
+
+    height:200px;
+
+    width:700px;
+
+    margin:auto;
+
+
+}
+
+#carrousel ul li{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    list-style-image: none;
+    list-style: none;
+    list-style-type: none;
+
+}
+
+
 /*# sourceMappingURL=bootstrap.css.map */

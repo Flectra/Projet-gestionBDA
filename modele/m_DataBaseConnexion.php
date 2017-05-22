@@ -30,6 +30,4 @@ function connexion() {
         die('Erreur : ' . $e->getMessage());
     } 
 return($db);}
-
-connexion();
 ?>

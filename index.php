@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title> Page d'accueil BDA </title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<div class = titreBienvenue>
-		<h2>Bienvenue !</h2> 
-		</div>
-		<div class = "barreNavig">	
-			<ul id="nav">
-		  		<li id="nav-accueil">Accueil</li>
-		  		<li id="nav-clubs">Clubs BDA</li>
-		  		<li id="nav-soon">A venir</li>
-			</ul> 
-		</div>
-	</body>
+<?php
+	if(!isset($_GET['section']) || $_GET['section']=='index'){
+		include_once('controleur/c_Accueil.php');
+	}
+	else if($_GET['section']=='login'){
+		include_once('controleur/c_login.php');
+	}
+	else if($_GET['section']=='club'){
+		include_once('controleur/c_club.php');
+	}
+  else if($_GET['section']=='avenir'){
+		include_once('controleur/c_avenir.php');
+	}
