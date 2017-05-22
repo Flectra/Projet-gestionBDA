@@ -1,5 +1,5 @@
 <?php
-  require_once "m_modele.php";
+  require_once"m_modele.php";
   /**
    * Classe permettant l'interaction avec la table "admin"
    * Hérite de la classe Model

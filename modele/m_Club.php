@@ -1,6 +1,6 @@
 <?php
   require_once "m_modele.php";
-  require_once "m_Respo.php"
+  require_once"m_Respo.php"; 
   /**
    * Classe permettant l'interaction avec la table "admin"
    * Hérite de la classe Model
@@ -75,6 +75,7 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+
 
     
     

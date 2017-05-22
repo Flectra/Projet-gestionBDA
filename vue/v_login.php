@@ -30,12 +30,12 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form method = 'POST' action="../controleur/c_login.php" class="form-signin">
         <h2 class="form-signin-heading">Connect as an Admin</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address or Pseudo" required autofocus>
+        <input id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address or Pseudo" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

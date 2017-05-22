@@ -21,9 +21,9 @@
      */
     public function createAdmin($utilisateur) {
       try {
-        $postgre = 'INSERT INTO '.$this->table.' (username, password, salt, role) VALUES (:username, :password, :salt, Admin)';
+        $postgre = 'INSERT INTO '.$this->table.' (username, password, role) VALUES (:username, :password, Admin)';
         $req = $this->query($postgre, array(':username' => $utilisateur['username'],
-                                        ':password' => $utilisateur['password'], ':salt' =>$utilisateur['salt'],'Admin' => $utilisateur['role']));
+                                        ':password' => $utilisateur['password'],'Admin' => $utilisateur['role']));
         return $this->database->lastInsertId();
       }
       catch(PDOException $e){
@@ -36,7 +36,7 @@
      * @param string $login le login de l'administrateur
      * @return array tableau associatif contenant les informations du compte
      */
-    public function getByLogin($username) {
+    public function getByUserName($username) {
       try{
         $postgre = 'SELECT * FROM '.$this->table.' WHERE username = :username';
         $req = $this->query($postgre,array(":username"=>$username));
@@ -48,6 +48,19 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
-    
+
+    /**public function modifyPassword($utilisateur){
+      try{
+        $postgre = 'UPDATE '.$this->table.' WHERE username = :username';
+        $req = $this->query($postgre,array(":username"=>$username));
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la modification du mot de passe dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
+    **/
   }
 ?>
