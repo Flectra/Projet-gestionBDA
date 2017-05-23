@@ -12,12 +12,12 @@
     <title>Connexion Admin</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../bootstrap/signin.css" rel="stylesheet">
+    <link href="bootstrap/signin.css" rel="stylesheet">
 
-    <script src="../bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
 
     <div class="container">
 
-      <form method = 'POST' action="../controleur/c_login.php" class="form-signin">
+      <form method = 'POST' action="controleur/c_login.php" class="form-signin">
         <h2 class="form-signin-heading">Connect as an Admin</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address or Pseudo" required autofocus>

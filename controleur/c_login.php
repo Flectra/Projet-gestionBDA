@@ -2,9 +2,8 @@
 
 require_once("../modele/m_Utilisateur.php");
 
-	$test = 
-	$username = isset($_POST['inputEmail']) ? $_POST['inputEmail'] : NULL;
-	$password =isset($_POST['inputPassword']) ? $_POST['inputPassword'] : "ça marche pas";
+	$username = isset($_POST['inputEmail']) ? $_POST['inputEmail'] : "pas de username";
+	$password = isset($_POST['inputPassword']) ? $_POST['inputPassword'] : "pas de password";
 
 		$utilisateur = new Utilisateur();
 		$error="";
@@ -13,15 +12,21 @@ require_once("../modele/m_Utilisateur.php");
 	          $data = array("username" => $utilisateur["username"],
 	                        "role" => "Admin");
 	          setcookie("data", $data, time() + (3600 * 25), "/",null, null, false, true);
-	          header('Location:../index.php');
+	          header('Location: ../');
 	        }
 	        else {
-	          self::$error = "Mot de passe incorrect";
+	          $error = "Mot de passe incorrect";
+	          header('Location: ../index.php?section=log');
 	        }
 	      }
 	    else {
-	       self::$error = "Utilisateur inexistant";
+	       $error = "Utilisateur inexistant";
+	       header('Location: ../index.php?section=log');
 	    }
+
+	    print_r($username);
+	    print_r($password);
+
     	
 
 	

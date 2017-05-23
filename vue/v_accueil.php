@@ -11,7 +11,7 @@
 	<body>
 		<header class="col-xs-12" text-align="center">
 			<div class="row">
-				<img  class = " col-xs-offset-1 col-xs-2 " src=images/BDA.jpeg alt="logo du BDA" width=110px height=auto/>
+				<img  class = " col-xs-offset-1 col-xs-2 " src=images/BDA.jpeg alt="logo du BDA" width=90px height=auto/>
 				<div class = "col-xs-6">
 					<div id="fond"> 
 				      	<div class="ruban">     
@@ -23,8 +23,18 @@
 				</div>
 				<div class=" col-xs-offset-1 col-xs-2" mergin="50px">
 					</br>
-					</br>
-					<a class="btn btn-danger" href="#" role="button">Log in</a>
+					</br><?php 
+					if ($connected ==false){
+						echo '<a class="btn btn-danger" href="index.php?section=log" role="button">Log in</a>';
+					}
+					else{
+						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Logged</a>';?>
+						<br>
+						Bonjour, toi !
+						<?php
+					}
+						
+					?>
 				</div>
 			</div>
 		</header>
@@ -33,7 +43,7 @@
 			<nav class="row col-xs-offset-3 col-xs-6">
 	          <ul class="nav nav-justified">
 	            <li class="active"><a href="#">Accueil</a></li>
-	            <li><a href="#">Clubs BDA</a></li>
+	            <li><a href="index.php?section=club">Clubs BDA</a></li>
 	            <li><a href="#">A venir</a></li>
 	            <li><a href="#">Test</a></li>
 	          </ul>
@@ -47,7 +57,7 @@
 		</div>
 		<div class = "row">
 			<div class="col-xs-offset-2 col-xs-7">
-			 <p class="lead " margin="50px">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+			 <p class="lead " margin="50px">Ici il y aura le texte de présentation BDA</p>
 			</div>
 		</div>
 

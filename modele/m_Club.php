@@ -76,6 +76,18 @@
       }
     }
 
+    /**public function getNbClubs() {
+      try{
+        $postgre = 'SELECT count(*) FROM '.$this->table.;
+        $req = $this->query($postgre);
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors du comptage du nc de clubs dans la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }*/
 
     
     
