@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Page d'accueil BDA </title>
+		<title> Clubs BDA </title>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 	<body>
 		<header class="col-xs-12" text-align="center">
 			<div class="row">
-				<img  class = " col-xs-offset-1 col-xs-2 " src=images/BDA.jpeg alt="logo du BDA" width=90px height=auto/>
+				<img  class = " col-xs-offset-1 col-xs-2 " src=images/BDA.jpeg alt="logo du BDA" width=70px height=auto/>
 				<div class = "col-xs-6">
 					<div id="fond"> 
 				      	<div class="ruban">     
@@ -61,13 +61,32 @@
 		</div>
 		<div class = "row">
 			<div class="col-xs-offset-3 col-xs-6">
-			<div id="carrousel">
+			<div id="carrousel" style="text-align:center">
 			    <ul>
-			        <li><img src="http://lorempixel.com/700/200/" width = "90%" /></li>
-					<li><img src="http://lorempixel.com/g/700/200/" width = "90%" /></li>
-					<li><img src="http://lorempixel.com/700/200/abstract/" width = "90%"/></li>
+			    	<?php 
+				foreach($AllClub as $club){
+					$pagefb=$club['pagefb'];
+					$nomclub=$club['nomclub'];
+					$descriptif=$club['descriptif'];
+					$urlimage=$club['urlimage'];?>
+					<li>
+						<div align="center">
+							<h3><?php echo($nomclub); ?></h3>
+							</br>
+							<h4>Page Facebook : <?php echo("<a href=".$pagefb."> ".$nomclub."</a>");?>
+							</br>
+							</br> 
+							 descriptif : <?php echo($descriptif); ?></h4><img src=images/deco2.jpg z-index="10">
+							<a class="btn btn-danger" href="index.php?section=log" role="button">Création Club</a><a class="btn btn-danger" href="index.php?section=log" role="button">Modification Club</a>
+							<a class="btn btn-danger" href="index.php?section=log" role="button">Suppression Club</a>
+					</div></li>
+				<?php } ?>
+			    
+			    	
 			    </ul>
 			</div>
+
+
 		    <a class="left carousel-control prev" href="#myCarousel" data-slide="prev">
 		      <span class="glyphicon glyphicon-chevron-left"></span>
 		      <span class="sr-only">Previous</span>
@@ -77,6 +96,7 @@
 		      <span class="sr-only">Next</span>
 		    </a>
 			</div>
+
 		</div>
 
 
