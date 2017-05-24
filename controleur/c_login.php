@@ -7,7 +7,10 @@ require_once("../modele/m_Utilisateur.php");
 
 		$utilisateur = new Utilisateur();
 		$error="";
-		if ($utilisateur = $utilisateur->getByUserName($username)) {
+		$utilisateur = $utilisateur->getByUserName($username);
+
+		/*vérifie si le mot de passe entré correspond à celui présent pour l'utilisateur dans la base de donnée*/
+		if (true) {
 	        if ($password == $utilisateur['password']) {
 	          $data = array("username" => $utilisateur["username"],
 	                        "role" => "Admin");
@@ -16,16 +19,15 @@ require_once("../modele/m_Utilisateur.php");
 	        }
 	        else {
 	          $error = "Mot de passe incorrect";
+	          print_r($username);
 	          header('Location: ../index.php?section=log');
 	        }
 	      }
 	    else {
 	       $error = "Utilisateur inexistant";
+	       print_r($username);
 	       header('Location: ../index.php?section=log');
 	    }
-
-	    print_r($username);
-	    print_r($password);
 
     	
 

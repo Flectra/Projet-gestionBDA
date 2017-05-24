@@ -22,9 +22,9 @@
      */
     public function createClub($Club) {
       try {
-        $postgre = 'INSERT INTO '.$this->table.' (nomclub, pagefb,respo,urlimage) VALUES (:nomclub, :pagefb, :descriptif, :respo, :urlimage)';
+        $postgre = 'INSERT INTO '.$this->table.' (nomclub, pagefb,respo,urlimage) VALUES (:nomclub, :pagefb, :descriptif,:urlimage)';
         $req = $this->query($postgre, array(':nomclub' => $Club['nomclub'],
-                                        ':pagefb' => $Club['pagefb'], ':descriptif' =>$Club['descriptif'],':respo' => $Club['respo'],
+                                        ':pagefb' => $Club['pagefb'], ':descriptif' =>$Club['descriptif'],
                                         ':urlimage' => $Club['urlimage']));
         return $this->database->lastInsertId();
       }

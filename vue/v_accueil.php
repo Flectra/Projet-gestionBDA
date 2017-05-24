@@ -30,8 +30,10 @@
 					else{
 						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Logged</a>';?>
 						<br>
-						Bonjour, toi !
 						<?php
+						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Create Admin</a>';?>
+						Bonjour, toi !
+					<?php	
 					}
 						
 					?>

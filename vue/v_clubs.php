@@ -31,7 +31,7 @@
 						echo '<a class="btn btn-danger" href="index.php?section=log" role="button">Log in</a>';
 					}
 					else{
-						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Logged</a>';?>
+						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Log out</a>';?>
 						<br>
 						Bonjour, toi !
 						<?php
@@ -76,11 +76,14 @@
 							<h4>Page Facebook : <?php echo("<a href=".$pagefb."> ".$nomclub."</a>");?>
 							</br>
 							</br> 
-							 descriptif : <?php echo($descriptif); ?></h4><img src=images/deco2.jpg z-index="10">
-							<a class="btn btn-danger" href="index.php?section=log" role="button">Création Club</a><a class="btn btn-danger" href="index.php?section=log" role="button">Modification Club</a>
-							<a class="btn btn-danger" href="index.php?section=log" role="button">Suppression Club</a>
+							 Descriptif : <?php echo($descriptif); ?></h4><img src=images/deco2.jpg z-index="10">
+							<button class="btn btn-danger" onclick="$('#exemple_fadein').fadeIn();">Create Club</button>
+							<button class="btn btn-danger" onclick="$('#exemple_fadein').fadeIn();">Modify Club</button>
+							<a class="btn btn-danger" href="index.php?section=log" role="button">Delete</a>
+							<a class="btn btn-danger" href="index.php?section=log" role="button">Modify Respo</a>		
 					</div></li>
 				<?php } ?>
+
 			    
 			    	
 			    </ul>
@@ -96,6 +99,59 @@
 		      <span class="sr-only">Next</span>
 		    </a>
 			</div>
+
+			<div class ="col-xs-offset-4 col-xs-4" id="exemple_fadein" style="background:#c0c0c0 ;padding:20px;display:none;z-index:10001;position:absolute;height:auto ;width:auto;" align="center">
+							<form name="htmlform" method="post" action="controleur/c_creationClub.php">
+								<table width="450px" valign="top">
+								
+								<tr>
+								 <td valign="top">
+								  <label for="nomclub">Nom Club</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="nomclub" maxlength="50" size="30">
+								 </td>
+								</tr>
+								 
+								<tr>
+								 <td valign="top"">
+								  <label for="pageFB">Page facebook(URL)</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="pageFB" maxlength="200" size="30">
+								 </td>
+								</tr>
+								<tr>
+								 <td valign="top">
+								  <label for="URLimage">URL image (facultatif)</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="URLimage" maxlength="80" size="30">
+								 </td>
+								 
+								</tr>
+								<tr>
+								 <td valign="top">
+								  <label for="descriptif">Descriptif</label>
+								 </td>
+								 <td valign="top">
+								  <textarea  name="descriptif" maxlength="500" cols="30" rows="6"></textarea>
+								 </td>
+								 
+								</tr>
+								<tr>
+								 <td colspan="2" style="text-align:center">
+								  <input type="submit" value="Submit"> 
+								  <button type="button" onclick="$('#exemple_fadein').fadeOut();">Fermer cette fenêtre<button> 
+								 </td>
+								</tr>
+
+							</table>
+
+							</form>
+							
+					        
+					</div>
 
 		</div>
 
