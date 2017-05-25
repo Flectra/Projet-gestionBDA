@@ -1,6 +1,6 @@
 <?php
 
-echo($SERVER['DOCUMENT_ROOT']);
+echo($_SERVER['DOCUMENT_ROOT']);
 require_once (__DIR__.'../modele/m_DatabaseConnexion.php');
 
 
