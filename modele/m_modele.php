@@ -1,6 +1,6 @@
 <?php
 
-print_r(glob($_SERVER['DOCUMENT_ROOT'] . '/*', GLOB_ONLYDIR));
+print_r(scandir($_SERVER['DOCUMENT_ROOT']));
 require_once ('m_DatabaseConnexion.php');
 
 
