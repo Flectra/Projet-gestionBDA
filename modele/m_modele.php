@@ -1,6 +1,7 @@
 <?php
 
-require_once ("/m_DatabaseConnexion.php");
+echo($SERVER['DOCUMENT_ROOT']);
+require_once (__DIR__.'../modele/m_DatabaseConnexion.php');
 
 
 abstract class Modele {
