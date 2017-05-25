@@ -37,10 +37,10 @@
     }
     public function modifyClub($club){
       try {
-        $postgre = 'UPDATE '.$this->table.'SET nomclub = :nomclub, pagefb = :pagefb, descriptif = :descriptif, respo = :respo, urlimage = :urlimage) WHERE nomclub = :nomclub';
+        $postgre = 'UPDATE '.$this->table.' SET nomclub = :nomclub, pagefb = :pagefb, descriptif = :descriptif, urlimage = :urlimage WHERE idclub = :idclub';
         $req = $this->query($postgre, array(':nomclub' => $club['nomclub'],
-                                        ':pagefb' => $club['pagefb'], ':descriptif' =>$club['descriptif'],':urlimage' => $club['urlimage']));
-        return $this->database->lastInsertId();
+                                        ':pagefb' => $club['pagefb'], ':descriptif' =>$club['descriptif'],':urlimage' => $club['urlimage'],
+                                        ':idclub'=>$club['idclub']));
       }
       catch(PDOException $e){
         exit('<p>Erreur lors de la modification des données dans la table : '.$this->table
@@ -48,11 +48,11 @@
       }
     }
 
-    public function deleteClub($nomclub){
+    public function deleteClub($idclub){
       try {
-        $postgre = 'DELETE FROM '.$this->table.' WHERE nomclub = :nomclub';
-        $req = $this->query($postgre, array(':nomclub' => $nomclub));
-        return $this->database->lastInsertId();// quelle fonction utiliser ?
+        $postgre = 'DELETE FROM '.$this->table.' WHERE idclub = :idclub';
+        echo($postgre);
+        $req = $this->query($postgre, array(':idclub' => $idclub));
       }
       catch(PDOException $e){
         exit('<p>Erreur lors de l\'effacement des données dans la table : '.$this->table

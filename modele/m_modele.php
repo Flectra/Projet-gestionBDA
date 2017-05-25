@@ -1,6 +1,5 @@
 <?php
 
-print_r(scandir($_SERVER['DOCUMENT_ROOT']));
 require_once (realpath(dirname(__FILE__)).'/../modele/m_DataBaseConnexion.php');
 
 

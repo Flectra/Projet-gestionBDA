@@ -12,37 +12,9 @@
 			<script src="includes/carrousel.js"></script>
 	</head>
 	<body>
-		<header class="col-xs-12" text-align="center">
-			<div class="row">
-				<img  class = " col-xs-offset-1 col-xs-2 " src=images/BDA.jpeg alt="logo du BDA" width=90px height=auto/>
-				<div class = "col-xs-6">
-					<div id="fond"> 
-				      	<div class="ruban">     
-				        	<h2>Gestion du BDA</h2>     
-				      	</div>     
-					    <div class="ruban_gauche"></div>
-					    <div class="ruban_droit"></div>
-					</div>
-				</div>
-				<div class=" col-xs-offset-1 col-xs-2" mergin="50px">
-					</br>
-					</br><?php 
-
-					if ($connected == false){
-						echo '<a class="btn btn-danger" href="index.php?section=log" role="button">Log in</a>';
-					}
-					else{
-						echo '<a class="btn btn-danger" href="index.php?section=logout" role="button">Log out</a>';?>
-						<br>
-						<?php
-						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Create Admin</a> <br> Bonjour, '.$_COOKIE["data_username"];?>
-					<?php	
-					}
-						
-					?>
-				</div>
-			</div>
-		</header>
+		<?php
+		include_once("vue/v_header.php")
+		?>
 		<div class="row">
 			<div class="col-xs-offset-2 col-xs-8">
 			<nav class="row col-xs-offset-3 col-xs-6">
@@ -65,11 +37,20 @@
 			<div id="carrousel" style="text-align:center">
 			    <ul>
 			    	<?php 
+			    //pour chaque club on récupère ses infos ainsi que celles de son respo
 				foreach($AllClub as $club){
 					$pagefb=$club['pagefb'];
 					$nomclub=$club['nomclub'];
 					$descriptif=$club['descriptif'];
-					$urlimage=$club['urlimage'];?>
+					$urlimage=$club['urlimage'];
+					$idclub=$club['idclub'];
+					$respoclub= $respo->getRespobyClub($idclub);
+					$inforespo = false;
+					if(!empty($respoclub)){
+					$nomrespo= $respoclub['firstname']." ".$respoclub['lastname'];
+					$mailrespo= $respoclub['mail'];
+					$inforespo = true; }
+					?>
 					<li>
 						<div align="center">
 							<h3><?php echo($nomclub); ?></h3>
@@ -77,13 +58,23 @@
 							<h4>Page Facebook : <?php echo("<a href=".$pagefb."> ".$nomclub."</a>");?>
 							</br>
 							</br> 
-							 Descriptif : <?php echo($descriptif); ?></h4><img src=images/deco2.jpg z-index="10">
+							 Descriptif : <?php echo($descriptif); 
+							 if($inforespo){
+							 	echo("</br> </br>Respo : ".$nomrespo. " </br></br> Mail du respo : ".$mailrespo);
+							 	}?>
+							 </h4><img src=images/deco2.jpg z-index="-1">
 							 <?php 
 							 if ($connected ==true) {?>
-							<button class="btn btn-danger" onclick="$('#creation_club').fadeIn();">Create Club</button>
+							<button class="btn btn-danger" onclick="$('#creation_club').fadeIn();" >Create Club</button>
 							<button class="btn btn-danger" onclick="$('#modification_club').fadeIn();">Modify Club</button>
-							<button class="btn btn-danger" method="post" action="controleur/c_gestionClub.php" name="delete" role="button">Delete</button>
-							<a class="btn btn-danger" href="index.php?section=log" role="button">Modify Respo</a>
+							<form  method="post" action="controleur/c_deleteclub.php" name="delete" role="button">
+							<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
+							<input type="submit" value="Delete" type ="button" class="btn btn-danger">
+							</form>
+							<form  method="post" action="controleur/c_modifyrespo.php" name="delete" role="button">
+							<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
+							<input type="submit" value="ModifyRespo" type ="button" class="btn btn-danger">
+							</form>
 							<?php } ?>		
 					</div></li>
 				<?php } ?>
@@ -102,7 +93,8 @@
 		      <span class="glyphicon glyphicon-chevron-right"></span>
 		      <span class="sr-only">Next</span>
 		    </a>
-			</div>				
+			</div>
+			<?php include_once("vue/v_formClub.php") ?>				
 
 		</div>
 		

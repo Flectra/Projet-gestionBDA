@@ -21,9 +21,9 @@
      */
     public function createAdmin($utilisateur) {
       try {
-        $postgre = 'INSERT INTO '.$this->table.' (username, password, role) VALUES (:username, :password, "Admin")';
+        $postgre = 'INSERT INTO '.$this->table.' (username, password, role) VALUES (:username, :password, :role)';
         $req = $this->query($postgre, array(':username' => $utilisateur['username'],
-                                        ':password' => $utilisateur['password'],'Admin' => $utilisateur['role']));
+                                        ':password' => $utilisateur['password'], ':role' => 'Admin'));
         return $this->database->lastInsertId();
       }
       catch(PDOException $e){

@@ -1,7 +1,5 @@
 <?php
 
-	error_reporting(E_ALL);
-	ini_set('display_errors',1);
 
 	if(!isset($_GET['section']) || $_GET['section']=='index'){
 		include_once('controleur/c_accueil.php');
@@ -20,4 +18,10 @@
 	}
 	else if($_GET['section']=='logout'){
 		include_once('controleur/c_logout.php');
+	}
+	else if($_GET['section']=='reg'){
+		include_once('controleur/c_reg.php');
+	}
+	else if($_GET['section']=='registration'){
+		include_once('controleur/c_registration.php');
 	}

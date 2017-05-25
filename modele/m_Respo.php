@@ -64,6 +64,20 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+
+    public function getRespobyClub($idclub){
+      try {
+        $postgre = 'SELECT * FROM '.$this->table.' WHERE idclub = :idclub';
+        $req = $this->query($postgre, array(':idclub' => $idclub
+                                        ));
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        return $res;
+      }
+      catch(PDOException $e){
+        exit('<p>Erreur lors de la sélection sur la table : '.$this->table
+             .'<br/>'.$e->getMessage().'</p>');
+      }
+    }
     
   }
 ?>

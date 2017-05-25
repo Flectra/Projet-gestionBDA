@@ -12,7 +12,7 @@ require_once("../modele/m_Utilisateur.php");
 		/*vérifie si le mot de passe entré correspond à celui présent pour l'utilisateur dans la base de donnée*/
 		if (true) 
 		{
-	        if ($password == $utilisateur['password']) {
+	        if (sha1(sha1($password)) == $utilisateur['password']) {
 	          $data = array("username" => $utilisateur["username"],
 	                        "role" => "Admin");
 	         
