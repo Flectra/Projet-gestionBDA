@@ -1,7 +1,6 @@
 <?php
 /**
  * fonction de connexion à une base de données
- * @author JadeHennebert
  */
 function connexion() {
 
