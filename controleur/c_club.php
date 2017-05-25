@@ -5,9 +5,10 @@
 affecté la valeur true à la variable $connecté (pour pouvoir influer sur la vue)
 */
 require_once "modele/m_Club.php";
+require_once "vue/v_formClub.php";
 
 $connected =false;
-if(isset($_COOKIE["data"])){
+if(isset($_COOKIE["data_username"])){
 	$connected = true;
 }
 
