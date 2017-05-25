@@ -1,6 +1,6 @@
 <?php
 
-print_r(scandir($_SERVER['DOCUMENT_ROOT']));
+print_r(scandir($_SERVER['DOCUMENT_ROOT']."/modele"));
 require_once ('m_DatabaseConnexion.php');
 
 
