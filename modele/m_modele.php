@@ -1,7 +1,7 @@
 <?php
 
-echo($_SERVER['DOCUMENT_ROOT']);
-require_once (__DIR__.'../modele/m_DatabaseConnexion.php');
+print_r(glob($_SERVER['DOCUMENT_ROOT'] . '/*', GLOB_ONLYDIR));
+require_once ('m_DatabaseConnexion.php');
 
 
 abstract class Modele {
