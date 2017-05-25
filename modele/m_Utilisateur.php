@@ -9,7 +9,7 @@
     /**
      * @var $pk_key clé primaire de la table
      */
-    protected $pk_key = 'ID_Utilisateur';
+    protected $pk_key = 'username';
     /**
      * @var $table table de la base de données utilisée par la classe
      */
@@ -21,7 +21,7 @@
      */
     public function createAdmin($utilisateur) {
       try {
-        $postgre = 'INSERT INTO '.$this->table.' (username, password, role) VALUES (:username, :password, Admin)';
+        $postgre = 'INSERT INTO '.$this->table.' (username, password, role) VALUES (:username, :password, "Admin")';
         $req = $this->query($postgre, array(':username' => $utilisateur['username'],
                                         ':password' => $utilisateur['password'],'Admin' => $utilisateur['role']));
         return $this->database->lastInsertId();

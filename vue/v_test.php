@@ -46,6 +46,14 @@ $AllRespos = $respo->getAll();
 print_r($AllRespos[0]);
 echo $AllRespos[0]['lastname'];
 
+$newclub=array('nomclub' => "TEST",
+               'pagefb' => "www.google.fr",
+               'urlimage' => "testurl",
+               'descriptif' => "test"
+               );
+print_r($newclub);
+$createdclub = $club->createClub($newclub)
+
 
 
 

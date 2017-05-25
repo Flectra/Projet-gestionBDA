@@ -14,3 +14,6 @@
 	else if($_GET['section']=='log'){
 		include_once('controleur/c_log.php');
 	}
+	else if($_GET['section']=='logout'){
+		include_once('controleur/c_logout.php');
+	}

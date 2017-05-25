@@ -79,7 +79,7 @@
 							 Descriptif : <?php echo($descriptif); ?></h4><img src=images/deco2.jpg z-index="10">
 							<button class="btn btn-danger" onclick="$('#exemple_fadein').fadeIn();">Create Club</button>
 							<button class="btn btn-danger" onclick="$('#exemple_fadein').fadeIn();">Modify Club</button>
-							<a class="btn btn-danger" href="index.php?section=log" role="button">Delete</a>
+							<button class="btn btn-danger" method="post" action="controleur/c_gestionClub.php" name="delete" role="button">Delete</button>
 							<a class="btn btn-danger" href="index.php?section=log" role="button">Modify Respo</a>		
 					</div></li>
 				<?php } ?>
@@ -101,7 +101,7 @@
 			</div>
 
 			<div class ="col-xs-offset-4 col-xs-4" id="exemple_fadein" style="background:#c0c0c0 ;padding:20px;display:none;z-index:10001;position:absolute;height:auto ;width:auto;" align="center">
-							<form name="htmlform" method="post" action="controleur/c_creationClub.php">
+							<form name="htmlform" method="post" action="controleur/c_gestionClub.php">
 								<table width="450px" valign="top">
 								
 								<tr>

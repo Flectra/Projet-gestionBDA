@@ -10,11 +10,14 @@ require_once("../modele/m_Utilisateur.php");
 		$utilisateur = $utilisateur->getByUserName($username);
 
 		/*vérifie si le mot de passe entré correspond à celui présent pour l'utilisateur dans la base de donnée*/
-		if (true) {
+		if (true) 
+		{
 	        if ($password == $utilisateur['password']) {
 	          $data = array("username" => $utilisateur["username"],
 	                        "role" => "Admin");
-	          setcookie("data", $data, time() + (3600 * 25), "/",null, null, false, true);
+	         
+	          setcookie("data_username", $utilisateur["username"], time() + (3600 * 25), "/",null, null, false);
+	          setcookie("data_role", "Admin", time() + (3600 * 25), "/",null, null, false);
 	          header('Location: ../');
 	        }
 	        else {
@@ -29,14 +32,8 @@ require_once("../modele/m_Utilisateur.php");
 	       header('Location: ../index.php?section=log');
 	    }
 
-    	
-
-	
    
-  	/**public function disconnect() {
-      if (isset($_COOKIE['data'])) {
-        setcookie("data", "", time() - 3600, "/");
-        unset($_COOKIE['data']);
-      }
-    **/
+   
+  	
+    
   ?>

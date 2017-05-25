@@ -10,22 +10,24 @@
     /**
      * @var $pk_key clé primaire de la table
      */
-    protected $pk_key = 'nomclub';
+    protected $pk_key = 'idclub';
     /**
      * @var $table table de la base de données utilisée par la classe
      */
-    protected $table = 'Club';
+    protected $table = 'club';
     /**
      * Création d'un nouveau club
      * @param array $club tableau contenant les valeurs à insérer dans la table
      * @return int l'identifiant du nouvel enregistrement
      */
-    public function createClub($Club) {
+    public function createClub($club) {
       try {
-        $postgre = 'INSERT INTO '.$this->table.' (nomclub, pagefb,respo,urlimage) VALUES (:nomclub, :pagefb, :descriptif,:urlimage)';
-        $req = $this->query($postgre, array(':nomclub' => $Club['nomclub'],
-                                        ':pagefb' => $Club['pagefb'], ':descriptif' =>$Club['descriptif'],
-                                        ':urlimage' => $Club['urlimage']));
+        $postgre = 'INSERT INTO '.$this->table.' (nomclub, pagefb,descriptif,urlimage) VALUES (:nomclub, :pagefb, :descriptif,:urlimage)';
+        $req = $this->query($postgre, array(':nomclub' => $club['nomclub'],
+                                        ':pagefb' => $club['pagefb'], ':descriptif' =>$club['descriptif'],
+                                        ':urlimage' => $club['urlimage']));
+        echo "l'insertion a bien été faite !";
+        print_r($club);
         return $this->database->lastInsertId();
       }
       catch(PDOException $e){
@@ -33,11 +35,11 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
-    public function modifyClub($Club){
+    public function modifyClub($club){
       try {
         $postgre = 'UPDATE '.$this->table.'SET nomclub = :nomclub, pagefb = :pagefb, descriptif = :descriptif, respo = :respo, urlimage = :urlimage) WHERE nomclub = :nomclub';
-        $req = $this->query($postgre, array(':nomclub' => $Club['nomclub'],
-                                        ':pagefb' => $Club['pagefb'], ':descriptif' =>$Club['descriptif'],':urlimage' => $Club['urlimage']));
+        $req = $this->query($postgre, array(':nomclub' => $club['nomclub'],
+                                        ':pagefb' => $club['pagefb'], ':descriptif' =>$club['descriptif'],':urlimage' => $club['urlimage']));
         return $this->database->lastInsertId();
       }
       catch(PDOException $e){
@@ -49,7 +51,7 @@
     public function deleteClub($nomclub){
       try {
         $postgre = 'DELETE FROM '.$this->table.' WHERE nomclub = :nomclub';
-        $req = $this->query($postgre, array(':nomclub' => $Club['nomclub']));
+        $req = $this->query($postgre, array(':nomclub' => $nomclub));
         return $this->database->lastInsertId();// quelle fonction utiliser ?
       }
       catch(PDOException $e){
@@ -63,9 +65,9 @@
      * @return array tableau associatif contenant les informations du compte
      */
 
-    public function getIDRespo($nomclub) {
+    public function getIDRespo($club) {
       try{
-        $postgre = 'SELECT respo FROM '.$this->table.' WHERE nomclub = :nomclub';
+        $postgre = 'SELECT respo FROM '.$this->table.' WHERE idclub = :idclub';
         $req = $this->query($postgre,array(":nomclub"=>$nomclub));
         $res = $req->fetch(PDO::FETCH_ASSOC);
         return $res;

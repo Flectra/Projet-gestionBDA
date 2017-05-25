@@ -24,11 +24,12 @@
 				<div class=" col-xs-offset-1 col-xs-2" mergin="50px">
 					</br>
 					</br><?php 
-					if ($connected ==false){
+
+					if ($connected == false){
 						echo '<a class="btn btn-danger" href="index.php?section=log" role="button">Log in</a>';
 					}
 					else{
-						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Logged</a>';?>
+						echo '<a class="btn btn-danger" href="index.php?section=logout" role="button">Logged</a>';?>
 						<br>
 						<?php
 						echo '<a class="btn btn-danger" href="index.php?section=login" role="button">Create Admin</a>';?>
