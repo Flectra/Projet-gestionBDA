@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../../app/modele/m_DatabaseConnexion.php");
+require_once ("/m_DatabaseConnexion.php");
 
 
 abstract class Modele {
