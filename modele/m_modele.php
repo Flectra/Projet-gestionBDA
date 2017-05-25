@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__."\m_DatabaseConnexion.php");
+require_once (__DIR__."/m_DatabaseConnexion.php");
 
 
 abstract class Modele {
