@@ -1,5 +1,5 @@
 <?php
-require_once (realpath($_SERVER["DOCUMENT_ROOT"])."app/modele/m_DatabaseConnexion.php");
+require_once (realpath($_SERVER["DOCUMENT_ROOT"])."/app/modele/m_DatabaseConnexion.php");
 
 
 abstract class Modele {
