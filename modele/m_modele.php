@@ -1,5 +1,5 @@
 <?php
-require_once ("m_DatabaseConnexion.php");
+include_once ("m_DatabaseConnexion.php");
 
 
 abstract class Modele {
