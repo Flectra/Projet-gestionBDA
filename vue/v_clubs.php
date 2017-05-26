@@ -19,17 +19,18 @@
 			<div class="col-xs-offset-2 col-xs-8">
 			<nav class="row col-xs-offset-3 col-xs-6">
 	          <ul class="nav nav-justified">
-	            <li><a href="index.php">Accueil</a></li>
-	            <li class="active"><a href="#">Clubs BDA</a></li>
-	            <li><a href="index.php/vue/v_test.php">A venir</a></li>
-	            <li><a href="#">Test</a></li>
+	            <li><a href="home">Accueil</a></li>
+	            <li class="active"><a href="">Clubs BDA</a></li>
+	            <li><a href="soon">A venir</a></li>
 	          </ul>
 	        </nav>
 			</div>
 		</div>
+		</br>
+		</br>
 		<div class="row">
-			<div class="col-xs-offset-2 col-xs-7">
-			<h1>Les clubs, leur respo et leurs coordonnées</h1>
+			<div class="col-xs-offset-3 col-xs-6">
+			<h1 align = center>Les clubs & les respos</h1>
 			</div>
 		</div>
 		<div class = "row">
@@ -40,6 +41,7 @@
 			    //pour chaque club on récupère ses infos ainsi que celles de son respo
 				foreach($AllClub as $club){
 					?>
+					<!-- on crée une liste de tous les éléments clubs + respo existants-->
 					<li class="col-xs-offset-3 col-xs-6">
 						<div align="center"><?php
 							$pagefb=$club['pagefb'];

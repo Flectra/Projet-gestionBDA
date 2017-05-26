@@ -15,13 +15,13 @@
 					</br><?php 
 
 					if ($connected == false){
-						echo '<a class="btn btn-danger" href="index.php?section=log" role="button">Log in</a>';
+						echo '<a class="btn btn-danger" href="log" role="button">Log in</a>';
 					}
 					else{
 						echo '<a class="btn btn-danger" href="index.php?section=logout" role="button">Log out</a>';?>
 						<br>
 						<?php
-						echo '<a class="btn btn-danger" href="index.php?section=reg" role="button">Create Admin</a> <br> Bonjour, '.$_COOKIE["data_username"];?>
+						echo '<a class="btn btn-danger" href="registration" role="button">Create Admin</a> <br> Bonjour, '.$_COOKIE["data_username"];?>
 					<?php	
 					}
 						

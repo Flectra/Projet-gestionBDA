@@ -1,5 +1,8 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [QSA,L]
-RewriteRule ^Accueil$ /controleur/c_accueil.php [L]
-RewriteRule ^Accueil$ /controleur/c_club.php [L]
+
+RewriteRule club$ index.php?section=club [L]
+RewriteRule home$ index.php?section=index [L]
+RewriteRule log$ index.php?section=log [L]
+RewriteRule registration$ index.php?section=reg [L]
+RewriteRule soon$ index.php?section=avenir [L]
+
