@@ -76,7 +76,7 @@
 										<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
 										<input type="submit" value="Delete" type ="button" class="btn btn-danger">
 									</form>
-							<img src=images/deco2.jpg z-index="-1">
+							<img src="includes/images/deco2.jpg">
 							<?php } ?>		
 					</div></li>
 				<?php } ?>
