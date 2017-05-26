@@ -1,9 +1,7 @@
 <?php
   require_once"m_modele.php";
   /**
-   * Classe permettant l'interaction avec la table "admin"
-   * Hérite de la classe Model
-   * @author JohanBrunet
+   * Hérite de la classe Modele
    */
   class Respo extends Modele {
     /**
@@ -15,9 +13,7 @@
      */
     protected $table = 'respo';
     /**
-     * Création d'un nouveau compte administrateur
-     * @param array $admin tableau contenant les valeurs à insérer dans la table
-     * @return int l'identifiant du nouvel enregistrement
+     * Création d'un nouveau respo
      */
     public function createRespo($respo) {
       try {
@@ -35,9 +31,7 @@
       }
     }
     /**
-     * Sélection d'un administrateur par son login
-     * @param string $login le login de l'administrateur
-     * @return array tableau associatif contenant les informations du compte
+     * Modification d'un respo
      */
 
     public function modifyRespo($respo){
@@ -53,6 +47,9 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+    /**
+     * Suppression d'un respo
+     */
 
     public function deleteRespo($respo){
       try {
@@ -66,6 +63,9 @@
       }
     }
 
+    /**
+     * Selection d'un respo par son idclub
+     */
     public function getRespobyClub($idclub){
       try {
         $postgre = 'SELECT * FROM '.$this->table.' WHERE idclub = :idclub';

@@ -2,9 +2,7 @@
   require_once "m_modele.php";
   require_once"m_Respo.php"; 
   /**
-   * Classe permettant l'interaction avec la table "admin"
-   * Hérite de la classe Model
-   * @author JohanBrunet
+   * Hérite de la classe Modele
    */
   class Club extends Modele {
     /**
@@ -15,10 +13,9 @@
      * @var $table table de la base de données utilisée par la classe
      */
     protected $table = 'club';
+
     /**
      * Création d'un nouveau club
-     * @param array $club tableau contenant les valeurs à insérer dans la table
-     * @return int l'identifiant du nouvel enregistrement
      */
     public function createClub($club) {
       try {
@@ -35,6 +32,10 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+
+     /**
+     * Modification d'un club
+     */
     public function modifyClub($club){
       try {
         $postgre = 'UPDATE '.$this->table.' SET nomclub = :nomclub, pagefb = :pagefb, descriptif = :descriptif, urlimage = :urlimage WHERE idclub = :idclub';
@@ -47,6 +48,11 @@
              .'<br/>'.$e->getMessage().'</p>');
       }
     }
+
+    /**
+     * Suppression d'un club
+     
+     */
 
     public function deleteClub($idclub){
       try {
@@ -63,9 +69,8 @@
       }
     }
     /**
-     * Sélection d'un respo par son login
-     * @param string $login le login de l'administrateur
-     * @return array tableau associatif contenant les informations du compte
+     * Sélection d'un respo par son idclub
+     
      */
 
     public function getIDRespo($club) {

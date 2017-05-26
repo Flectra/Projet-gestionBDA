@@ -1,9 +1,7 @@
 <?php
   require_once "m_modele.php";
   /**
-   * Classe permettant l'interaction avec la table "admin"
-   * Hérite de la classe Model
-   * @author JohanBrunet
+   * Hérite de la classe Modele
    */
   class Utilisateur extends Modele {
     /**
@@ -16,8 +14,6 @@
     protected $table = 'utilisateur';
     /**
      * Création d'un nouveau compte administrateur
-     * @param array $admin tableau contenant les valeurs à insérer dans la table
-     * @return int l'identifiant du nouvel enregistrement
      */
     public function createAdmin($utilisateur) {
       try {
@@ -33,8 +29,6 @@
     }
     /**
      * Sélection d'un administrateur par son login
-     * @param string $login le login de l'administrateur
-     * @return array tableau associatif contenant les informations du compte
      */
     public function getByUserName($username) {
       try{

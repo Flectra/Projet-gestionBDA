@@ -33,9 +33,9 @@ abstract class Modele {
       }
       return $resultat;
     }
+    
     /**
      * Fonction pour récupérer tous les enregistrements de la table
-     * @return array tableau asso-ciatif
      */
     public function getAll() {
       try{
@@ -52,8 +52,6 @@ abstract class Modele {
     }
     /**
      * Fonction pour la récupération d'un enregistrement en particulier
-     * @param int $id identifiant de l'enregistrement
-     * @return array tableau associatif
      */
     public function getById($id) {
       try{
