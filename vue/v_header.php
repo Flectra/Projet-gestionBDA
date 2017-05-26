@@ -1,6 +1,6 @@
 <header class="col-xs-12" text-align="center">
 			<div class="row">
-				<img  class = " col-xs-offset-1 col-xs-2 " src='images/BDA.jpeg' alt="logo du BDA" width=90px height=auto/>
+				<img  class = " col-xs-offset-1 col-xs-2 " src='includes/images/BDA.jpg' alt="logo du BDA" width=90px height=auto/>
 				<div class = "col-xs-6">
 					<div id="fond"> 
 				      	<div class="ruban">     
