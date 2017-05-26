@@ -42,9 +42,10 @@
 
     public function modifyRespo($respo){
       try {
-        $postgre = 'UPDATE '.$this->table.'SET firstname = :firstname, lastname = :lastname mail = :mail) WHERE idclub = :idclub';
-        $req = $this->query($postgre, array(':idrespo' => $respo['idrespo'],
-                                        ':firstname' => $respo['firstname'], ':mail' =>$respo['mail']));
+        $postgre = 'UPDATE '.$this->table.' SET firstname = :firstname, lastname = :lastname, mail = :mail WHERE idclub = :idclub';
+        $req = $this->query($postgre, array(':lastname' => $respo['lastname'],
+                                        ':firstname' => $respo['firstname'], ':mail' =>$respo['mail'], ':idclub'=>$respo['idclub']));
+        print_r($req);
         return $this->database->lastInsertId();// quelle fonction utiliser ?
       }
       catch(PDOException $e){

@@ -39,20 +39,21 @@
 			    	<?php 
 			    //pour chaque club on récupère ses infos ainsi que celles de son respo
 				foreach($AllClub as $club){
-					$pagefb=$club['pagefb'];
-					$nomclub=$club['nomclub'];
-					$descriptif=$club['descriptif'];
-					$urlimage=$club['urlimage'];
-					$idclub=$club['idclub'];
-					$respoclub= $respo->getRespobyClub($idclub);
-					$inforespo = false;
-					if(!empty($respoclub)){
-					$nomrespo= $respoclub['firstname']." ".$respoclub['lastname'];
-					$mailrespo= $respoclub['mail'];
-					$inforespo = true; }
 					?>
-					<li>
-						<div align="center">
+					<li class="col-xs-offset-3 col-xs-6">
+						<div align="center"><?php
+							$pagefb=$club['pagefb'];
+							$nomclub=$club['nomclub'];
+							$descriptif=$club['descriptif'];
+							$urlimage=$club['urlimage'];
+							$idclub=$club['idclub'];
+							$respoclub= $respo->getRespobyClub($idclub);
+							$inforespo = false;
+							if(!empty($respoclub)){
+							$nomrespo= $respoclub['firstname']." ".$respoclub['lastname'];
+							$mailrespo= $respoclub['mail'];
+							$inforespo = true; }
+							?>
 							<h3><?php echo($nomclub); ?></h3>
 							</br>
 							<h4>Page Facebook : <?php echo("<a href=".$pagefb."> ".$nomclub."</a>");?>
@@ -62,19 +63,18 @@
 							 if($inforespo){
 							 	echo("</br> </br>Respo : ".$nomrespo. " </br></br> Mail du respo : ".$mailrespo);
 							 	}?>
-							 </h4><img src=images/deco2.jpg z-index="-1">
+							 </h4>
+							 </br>
 							 <?php 
 							 if ($connected ==true) {?>
-							<button class="btn btn-danger" onclick="$('#creation_club').fadeIn();" >Create Club</button>
-							<button class="btn btn-danger" onclick="$('#modification_club').fadeIn();">Modify Club</button>
-							<form  method="post" action="controleur/c_deleteclub.php" name="delete" role="button">
-							<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
-							<input type="submit" value="Delete" type ="button" class="btn btn-danger">
-							</form>
-							<form  method="post" action="controleur/c_modifyrespo.php" name="delete" role="button">
-							<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
-							<input type="submit" value="ModifyRespo" type ="button" class="btn btn-danger">
-							</form>
+									<button class="btn btn-danger" onclick="$('#creation_club').fadeIn();" >Create Club</button>
+									<button class="btn btn-danger" onclick="$('#modification_club').fadeIn();">Modify Club</button>	
+									<button class="btn btn-danger" onclick="$('#modification_respo').fadeIn();" >Modify Respo</button>
+									<form  method="post" action="controleur/c_deleteclub.php" name="delete" role="button">
+										<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
+										<input type="submit" value="Delete" type ="button" class="btn btn-danger">
+									</form>
+							<img src=images/deco2.jpg z-index="-1">
 							<?php } ?>		
 					</div></li>
 				<?php } ?>

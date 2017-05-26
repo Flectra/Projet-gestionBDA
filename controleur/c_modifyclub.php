@@ -26,7 +26,7 @@ print_r($modifiedClub);
 			echo ($nomclub);
 			print_r($modifiedClub);
 			echo("ça a bien marché");
-			//header('Location: ../index.php?section=club');
+			header('Location: ../index.php?section=club');
 		}
 	        
 	    else {

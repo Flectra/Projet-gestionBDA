@@ -53,6 +53,9 @@
         $postgre = 'DELETE FROM '.$this->table.' WHERE idclub = :idclub';
         echo($postgre);
         $req = $this->query($postgre, array(':idclub' => $idclub));
+         $postgre = 'DELETE FROM respo WHERE idclub = :idclub';
+        echo($postgre);
+        $req = $this->query($postgre, array(':idclub' => $idclub));
       }
       catch(PDOException $e){
         exit('<p>Erreur lors de l\'effacement des données dans la table : '.$this->table
