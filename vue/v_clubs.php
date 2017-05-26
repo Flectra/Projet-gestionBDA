@@ -27,7 +27,6 @@
 			</div>
 		</div>
 		</br>
-		</br>
 		<div class="row">
 			<div class="col-xs-offset-3 col-xs-6">
 			<h1 align = center>Les clubs & les respos</h1>
