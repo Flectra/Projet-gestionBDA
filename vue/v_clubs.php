@@ -67,6 +67,7 @@
 							 </h4>
 							 </br>
 							 <?php 
+							 //fait apparaitre les boutons uniquement si un admin est connecté.
 							 if ($connected ==true) {?>
 									<button class="btn btn-danger" onclick="$('#creation_club').fadeIn();" >Create Club</button>
 									<button class="btn btn-danger" onclick="$('#modification_club').fadeIn();">Modify Club</button>	
@@ -75,8 +76,9 @@
 										<input type="hidden" name="idclub" value=<?php echo($idclub)?> >
 										<input type="submit" value="Delete" type ="button" class="btn btn-danger">
 									</form>
-							<img src="includes/images/deco2.jpg">
-							<?php } ?>		
+							
+							<?php } ?>	
+							<img src="includes/images/deco2.jpg">	
 					</div></li>
 				<?php } ?>
 
